@@ -22,7 +22,7 @@ namespace HelloEmpty
 
             var app = builder.Build();
 
-            #region HTTP
+            #region 레거시
             //// C# 11.0 버전의 원시 문자열 이터럴 (Raw string literals)
             //string htmlTag = """
             //<html lang="ko">
@@ -41,11 +41,13 @@ namespace HelloEmpty
 
             app.UseRouting();
 
+            #region MVC 기반
             // MVC 기반
             //app.MapDefaultControllerRoute();
             //app.MapControllerRoute(
             //    name: "default",
             //    pattern: "{controller=Home}/{action=Index}/{id?}");
+            #endregion
 
             // RazorPage기반
             app.MapRazorPages();
