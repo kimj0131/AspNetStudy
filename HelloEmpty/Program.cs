@@ -1,12 +1,18 @@
 namespace HelloEmpty
 {
+    // MVC
     // M (Model)        데이터 (원자재)
     // V (View)         UI (인테리어)
     // C (Conntroller)  동작 제어 (액션)
 
+    // Razor
     // M
     // VC 
-    // M - V - VM
+    // >> M - V - VM
+
+    // WebAPI
+    // M
+    // C
 
     public class Program
     {
@@ -18,7 +24,10 @@ namespace HelloEmpty
             //builder.Services.AddMvc();
 
             // RazorPages 서비스를 추가
-            builder.Services.AddRazorPages();
+            //builder.Services.AddRazorPages();
+
+            // WpeAPI서비스 추가
+            builder.Services.AddControllers();
 
             var app = builder.Build();
 
@@ -49,11 +58,15 @@ namespace HelloEmpty
             //    pattern: "{controller=Home}/{action=Index}/{id?}");
             #endregion
 
+            #region RazorPage 기반
             // RazorPage기반
-            app.MapRazorPages();
+            // app.MapRazorPages();
+            #endregion
+
+            // WebAPI
+            app.MapControllers();
 
             app.Run();
-
 
         }
     }
